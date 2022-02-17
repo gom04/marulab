@@ -19,7 +19,7 @@ function Header() {
       alt="Picture of the author"
       width={30}
       height={30}
-    />  MaruoneLab2a</a>
+    />  MaruoneLabs</a>
     </Link>
     .
   </h2>
