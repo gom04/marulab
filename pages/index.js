@@ -1,9 +1,15 @@
 import Head from 'next/head'
 import Header from '../components/Header'
-import { HomeIcon , LightningBoltIcon } from '@heroicons/react/outline'
+import { HomeIcon , LightningBoltIcon, SunIcon ,MoonIcon } from '@heroicons/react/outline'
 import HeaderItem from '../components/HeaderItem'
-import Nav from '../components/Nav'
-export default function Home() {
+import Nav from '../components/Nav' 
+
+
+export default function Home() { 
+
+
+
+
   return ( 
     <div className='flex flex-grow justify-evenly '> 
     {/*
@@ -13,7 +19,10 @@ export default function Home() {
 <Header/>*/}  
 <Header/>
 <Nav/>
+ 
   {/*footer */}
+
+
     </div>
     
   )
