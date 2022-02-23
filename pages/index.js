@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import { HomeIcon , LightningBoltIcon, SunIcon ,MoonIcon } from '@heroicons/react/outline'
 import HeaderItem from '../components/HeaderItem'
 import Nav from '../components/Nav' 
+import Intro from '../components/Intro' 
 
 
 export default function Home() { 
@@ -19,6 +20,7 @@ export default function Home() {
 <Header/>*/}  
 <Header/>
 <Nav/>
+<Intro/>
  
   {/*footer */}
 
