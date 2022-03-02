@@ -1,9 +1,14 @@
 import { useState , useEffect } from 'react' 
+import Link from 'next/link'
 import React from 'react'
 import { useTheme } from 'next-themes'
-import {SunIcon , MoonIcon } from '@heroicons/react/outline' 
+import {SunIcon , MoonIcon } from '@heroicons/react/outline'  
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
+import {faDiscord , faTwitter} from '@fortawesome/free-brands-svg-icons';
 
 function Intro() { 
+ 
+
   const{systemTheme,theme , setTheme} = useTheme()
   const [isMounted, setIsMounted] = useState(false);
   useEffect(() =>  { 
@@ -31,8 +36,15 @@ function Intro() {
   };
 
   return (
-    <div className='justify-between items-center dark:border-gray-700 mt-8'>
-      {renderThemeChanger()}
+    <div className='flex justify-between items-center dark:border-gray-700 mt-8 '>
+      <div className='ml-4'>
+       <Link href="https://twitter.com/" passHref >
+        <a target="_blank"><FontAwesomeIcon icon={faDiscord}  /></a></Link>  </div> 
+       <div className='ml-4'><Link href="/">
+       <a target="_blank">  <FontAwesomeIcon icon={faTwitter} /></a></Link> 
+     </div>
+     <div className='ml-4'> {renderThemeChanger()} </div>
+     
       </div>
   )
 }

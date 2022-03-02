@@ -1,23 +1,46 @@
 import React from 'react' 
 import Link from 'next/link'
-import Button from "react-bootstrap/Button";
-import { navLinks } from "../utils/request";
+import {navLinks}  from "../utils/request";
+import {useRouter}  from "next/router"; 
+const { useState } = React;
+ 
 
-function Nav() {
-  return (  
-<nav className='flex space-x-8   tracking-tight md:tracking-tighter leading-tight  mt-8'>
-  {navLinks.map((link, index) => {
+
+
+function Nav() { 
+  const router = useRouter()
+ // const [isOpen, setIsOpen] = useState(false);
+ // const genericHamburgerLine = `h-1 w-6 my-1 rounded-full bg-black transition ease transform duration-300`;
+  return (   
+   <div>
+ 
+  <div  >
+
+
+<ul>
+  {navLinks.map((link,index) => {
           return (
-            <ul>
+           
               <Link href={link.path}>
-                <li key={index}>{link.name}</li>
-              </Link>
-            </ul>
+                <li key={index.id_param} className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full 
+                     lg:items-center items-start  flex flex-col lg:h-auto block-lo'>
+                  <a
+              className={`cursor-pointer ${router.pathname === link.path ? 
+                'text-blue-500  my-4':'hover:bg-gray-900 hover:text-blue-500'}`} >
+              {link.name_param}
+                  </a>
+                  </li>
+              </Link> 
           );
-        })}</nav>
+        })}
+
+</ul>
 
 
-        
+
+
+   </div> 
+    </div> 
   )
 } 
 
