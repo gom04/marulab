@@ -5,10 +5,8 @@ import Intro from '../components/Intro'
 
 function aboutus() {
   return (
-    <div className='flex flex-grow justify-evenly '>
-      <Header/>
-    <Nav/>
-    <Intro/></div>
+    <div >
+      <Header/> </div>
   )
 }
 

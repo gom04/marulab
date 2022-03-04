@@ -35,8 +35,8 @@ function Intro() {
     }  
   };
 
-  return (
-    <div className='flex justify-between items-center dark:border-gray-700 mt-8 '>
+  return (<div>
+    <div className='relative hidden lg:flex md:flex items-center dark:border-gray-700 mt-8 '>
       <div className='ml-4'>
        <Link href="https://twitter.com/" passHref >
         <a target="_blank"><FontAwesomeIcon icon={faDiscord}  /></a></Link>  </div> 
@@ -44,7 +44,8 @@ function Intro() {
        <a target="_blank">  <FontAwesomeIcon icon={faTwitter} /></a></Link> 
      </div>
      <div className='ml-4'> {renderThemeChanger()} </div>
-     
+     </div>
+     <div className='sm:flex md:hidden lg:hidden'>lorem10</div>
       </div>
   )
 }
