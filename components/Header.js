@@ -3,21 +3,27 @@ import Nav from '../components/Nav'
 import Intro from '../components/Intro' 
  
 import Link from 'next/link' 
+import { useTheme } from 'next-themes'
 import styles from "../styles/Layout.module.css";
 import styles2 from '../styles/Home.module.css'
 import { useState } from "react";
 
 import Image from 'next/image' 
 import Lottie from 'react-lottie-player'
-import logo from '../public/logoanima.json'; 
-
+import logo from '../public/logoanima-black.json'; 
+import logow from '../public/logoanima-white.json'; 
+ 
 const myLoader = ({ src, width, quality }) => {
   return `https://tailwindui.com/img/logos/${src}?w=${width}&q=${quality || 75}`
 } 
  
 function Header() {  
+  
   const [isOpen,setIsOpen] = useState(false);
-  const openMenu= ()=> setIsOpen(!isOpen);
+  const openMenu= ()=> setIsOpen(!isOpen);  
+  const {theme, setTheme} = useTheme()
+
+
   return ( 
     <header className={styles2.header}>
     <nav className={styles.navbar}>
@@ -26,8 +32,17 @@ function Header() {
          <Lottie
       loop
       animationData={logo}
+      play 
+    
+      className={theme === "light" ? 'mt-6': 'mr-2 color-scheme'} 
+      style={{ width: 50, height: 50 }}
+    /> 
+
+<Lottie
+      loop
+      animationData={logow}
       play
-      className='mt-6 mr-2'
+      className={theme === "dark" ? 'mt-6': 'mr-2 dark-scheme'} 
       style={{ width: 50, height: 50 }}
     /> 
     <h4 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mt-8">

@@ -28,8 +28,7 @@ function Intro() {
     } else { 
       return(
         <MoonIcon className='w-7 h-7'  role="button"   
-        onClick={() => 
-          setTheme('dark')}/>
+        onClick={() => setTheme('dark')}/>
           )
  
     }  
